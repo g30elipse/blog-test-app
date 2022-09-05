@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import './App.css'
-import NavBar from './assets/components/NavBar'
+import NavBar from './components/NavBar'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from './assets/components/HomePage/Home';
-import FeaturedBlogs from './assets/components/FeaturedBlogs';
-import LatestBlogs from './assets/components/LatestBlogs';
-import Error from './assets/components/Error';
-import BlockDetails from './assets/components/blockDetails/BlockDetails';
-import Blogs from './assets/components/HomePage/Blogs';
-import Bookmarks from './assets/components/HomePage/Bookmarks';
+import Home from './pages/HomePage/Home';
+import FeaturedBlogs from './components/FeaturedBlogs';
+import LatestBlogs from './components/LatestBlogs';
+import Error from './components/Error';
+import BlockDetails from './pages/blockDetails/BlockDetails';
+import Blogs from './pages/HomePage/Blogs';
+import Bookmarks from './pages/HomePage/Bookmarks';
 
 
 

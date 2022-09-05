@@ -1,7 +1,7 @@
 import React from 'react'
-import { useGlobalContext } from '../Context'
-import LatestBlogs from '../LatestBlogs'
-import FeaturedBlogs from '../FeaturedBlogs'
+import { useGlobalContext } from '../../components/Context'
+import LatestBlogs from '../../components/LatestBlogs'
+import FeaturedBlogs from '../../components/FeaturedBlogs'
 
 
 

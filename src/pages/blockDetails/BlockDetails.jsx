@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useGlobalContext } from '../Context'
+import { useGlobalContext } from '../../components/Context'
 import { Link, NavLink } from 'react-router-dom';
 
 
@@ -51,38 +51,6 @@ const BlockDetails = () => {
                     </div>
                 </div>
             </div>
-
-
-            {/* {
-                
-                    // console.log(currPost.attributes.title)
-                
-                    // const { attributes } = currPost
-                    // let image = attributes.cover.data.attributes.url
-
-                    // console.log(image)
-
-                    // return (
-                    //     <div className="box" key={currPost.id}>
-                    //         <div className="latestCard">
-                    //             <div className="card1">
-                    //                 <img className='imgdetails' src={`http://localhost:1337${image}`} alt="logo" />
-                    //                 <br />
-                    //                 <br />
-                    //                 <NavLink to="/blogs/details" > {attributes.title}</NavLink>
-
-                    //                 <br />
-                    //                 {attributes.createdAt.slice(0, 10)}
-                    //                 <br />
-                    //                 <br />
-                    //                 {attributes.content}
-                    //             </div>
-                    //         </div>
-                    //     </div>
-                    // )
-
-                })
-            } */}
         </div >
 
     )

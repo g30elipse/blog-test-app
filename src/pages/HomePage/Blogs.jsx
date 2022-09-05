@@ -1,6 +1,6 @@
 import React from 'react'
-import { useGlobalContext } from '../Context'
-import FeaturedBlogs from '../FeaturedBlogs'
+import { useGlobalContext } from '../../components/Context'
+import FeaturedBlogs from '../../components/FeaturedBlogs'
 
 const Blogs = () => {
 
