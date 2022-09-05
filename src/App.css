@@ -1,0 +1,139 @@
+ul {
+  position: fixed;
+  list-style-type: none;
+  top: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  z-index: 10;
+}
+
+li {
+  float: left;
+  font-size: 14px;
+}
+
+
+
+li a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 50px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
+}
+
+
+
+
+/* .container {
+  /* text-align: center; */
+/* position: absolute;
+  top: 100px;
+  width: 25%;
+  display: block;
+  padding: 20px 50px; */
+/* border: 2px solid black; */
+
+/* } */
+
+/* .container-right {
+  position: absolute;
+  top: 120px;
+  right: 100px;
+  width: 50%; */
+
+/* } */
+
+
+
+
+
+.box {
+  padding: 25px 1px;
+}
+
+
+.featureCard {
+  background: white;
+  padding: 20px 25px;
+  border-radius: 10px;
+  /* border: 2px solid black; */
+}
+
+.latestCard {
+
+  display: flex;
+  background: white;
+  padding: 20px 25px;
+  border-radius: 10px;
+  /* border: 2px solid black; */
+}
+
+.card1 {
+  background: white;
+  padding: 20px 25px;
+  /* border: 2px solid black; */
+}
+
+
+
+
+img {
+  width: 150px;
+  height: 150px;
+  border-radius: 3px;
+}
+
+
+.blogsContainer {
+  padding: 20px 50px;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 80%;
+  display: block;
+}
+
+
+.homeContainerleft {
+  position: absolute;
+  top: 50px;
+  width: 25%;
+  left: 100px;
+  display: block;
+  padding: 20px 30px;
+}
+
+.homeContainerright {
+  position: absolute;
+  top: 70px;
+  right: 100px;
+  width: 50%;
+
+}
+
+
+.blockDetails {
+  padding: 20px 50px;
+  position: absolute;
+  top: 50px;
+  left: 200px;
+  width: 60%;
+  display: block;
+  text-align: justify;
+}
+
+
+.imgdetails {
+  width: 100%;
+  left: 50px;
+  height: 300px;
+}
