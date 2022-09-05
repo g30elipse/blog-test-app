@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { useGlobalContext } from './Context'
 import { Link, NavLink } from 'react-router-dom';
 
 
@@ -45,7 +44,7 @@ const LatestBlogs = (props) => {
 
                                     {/* <NavLink to={`/latestblog/ ${attributes.title}`}> {attributes.title}</NavLink> */}
 
-                                    <NavLink to="/blogs/details" onClick={() => detailPost(currPost.id)}> {attributes.title}</NavLink>
+                                    <NavLink to={`/blogs/${currPost.id}`} onClick={() => detailPost(currPost.id)}> {attributes.title}</NavLink>
                                     <br />
                                     {attributes.createdAt.slice(0, 10)}
                                     <br />

@@ -8,7 +8,7 @@ import { API } from '../../vars'
 const Blogs = () => {
 
 
-      const [blogs, setBlogs] = useState([]);
+    const [blogs, setBlogs] = useState([]);
     const [meta, setMeta] = useState(undefined);
     const [isLoading, setIsLoading] = useState(false);
 

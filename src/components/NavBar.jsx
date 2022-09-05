@@ -6,16 +6,16 @@ const NavBar = () => {
 
 
     return (
-        <div >
-            <ul>
+        <div className='nav'>
+            <NavLink to="/">BLOGGG</NavLink>  
+            <div>
 
-                <li> <NavLink className='active' to="#">  BLOGGG</NavLink>  </li>
-                <li>  <NavLink className='active' to="/">  HOME</NavLink>  </li>
-                <li>  <NavLink className='active' to="/blogs">  BLOGS</NavLink>  </li>
-                <li>  <NavLink className='active' to="/bookmarks">  BOOKMARKS</NavLink>  </li>
+                  <NavLink  className={({isActive}) => isActive? "active-nav" : ""} to="/">  HOME</NavLink>  
+                  <NavLink  className={({isActive}) => isActive? "active-nav" : ""} to="/blogs">  BLOGS</NavLink>  
+                 <NavLink  className={({isActive}) => isActive? "active-nav" : ""} to="/bookmarks">  BOOKMARKS</NavLink> 
 
 
-            </ul>
+            </div>
 
         </div>
     )

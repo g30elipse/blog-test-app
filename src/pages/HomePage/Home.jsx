@@ -1,38 +1,62 @@
 import React, { useEffect, useState } from 'react'
-import { useGlobalContext } from '../../components/Context'
 import qs from 'qs';
 import axios from 'axios';
+import { API } from '../../vars'
 import LatestBlogs from '../../components/LatestBlogs'
 import FeaturedBlogs from '../../components/FeaturedBlogs'
-import { API } from '../../vars'
 
 
 
 const HomePage = () => {
 
     const [blogs, setBlogs] = useState([]);
+    const [featuredBlogs, setFeaturedBlogs] = useState([]);
     const [meta, setMeta] = useState(undefined);
     const [isLoading, setIsLoading] = useState(false);
 
 
     useEffect(() => {
-        fetchApiData()
+        fetchBlogs()
+        fetchFeaturedBlogs()
     },[])
 
 
-    const fetchApiData = async () => {
+    const fetchBlogs = async () => {
         setIsLoading(true);
         const query = qs.stringify({
             populate: "*",
+            sort: 'createdAt:desc',
             pagination: {
                 page: 1,
-                pageSize: 2
+                pageSize: 5
             }
         })
         try {
             const { data } = await axios.get(API + `posts?${query}`);
             setBlogs(data.data);
             setMeta(data.meta);
+        }
+        catch (error) {
+            console.log(error)
+        }
+        setIsLoading(false);
+    }
+
+    const fetchFeaturedBlogs = async () => {
+        setIsLoading(true);
+        const query = qs.stringify({
+            populate: "*",
+            filters: {
+                isFeatured: true
+            },
+            pagination: {
+                page: 1,
+                pageSize: 3
+            }
+        })
+        try {
+            const { data } = await axios.get(API + `posts?${query}`);
+            setFeaturedBlogs(data.data);
         }
         catch (error) {
             console.log(error)
@@ -59,7 +83,7 @@ const HomePage = () => {
             <div className='homeContainerleft'>
                 <h3>FEATURED BLOGS</h3>
 
-                <FeaturedBlogs blogs={blogs}/>
+                <FeaturedBlogs blogs={featuredBlogs}/>
             </div>
 
             <div className='homeContainerright'>

@@ -6,7 +6,7 @@ import Home from './pages/HomePage/Home';
 import FeaturedBlogs from './components/FeaturedBlogs';
 import LatestBlogs from './components/LatestBlogs';
 import Error from './components/Error';
-import BlockDetails from './pages/blockDetails/BlockDetails';
+import BlockDetails from './pages/BlockDetails/BlockDetails';
 import Blogs from './pages/Blogs/Blogs';
 import Bookmarks from './pages/Bookmark/Bookmarks';
 
@@ -39,7 +39,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/bookmarks" element={<Bookmarks />} />
-        <Route path={`blogs/details`} element={<BlockDetails />} />
+        <Route path="/blogs/:blogId" element={<BlockDetails />} />
 
 
         {/* <Route path="/error" element={<Error />} /> */}

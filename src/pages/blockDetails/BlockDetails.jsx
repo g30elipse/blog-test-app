@@ -1,15 +1,44 @@
 import React, { useState, useEffect } from 'react'
-import { useGlobalContext } from '../../components/Context'
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useParams} from 'react-router-dom';
+import qs from 'qs';
+import axios from 'axios';
+import { API } from '../../vars'
 
 
 
 
 const BlockDetails = () => {
+    const params = useParams();
+    
+    
+    const [blog, setBlog] = useState(undefined);
+    const [isLoading, setIsLoading] = useState(false);
+    const blogId = params.blogId;
 
-    const { data, isLoading, details } = useGlobalContext();
+    useEffect(() => {
+        fetchApiData()
+    },[])
 
-    console.log(data, isLoading, details)
+
+    const fetchApiData = async () => {
+        setIsLoading(true);
+        const query = qs.stringify({
+            populate: "*",
+        })
+        
+        try {
+            const { data } = await axios.get(API + `posts/${blogId}?${query}`);
+            setBlog(data.data);
+            
+        }
+        catch (error) {
+            console.log(error)
+        }
+        setIsLoading(false);
+    }
+
+
+    
 
     if (isLoading) {
         return (
@@ -19,35 +48,37 @@ const BlockDetails = () => {
         )
     }
 
-    if (details === undefined) {
+    if (blog === undefined) {
         return (
             <div>Invalid</div>
         )
 
     }
 
-    let image = details.attributes.cover.data.attributes.url
+    console.log("blog detail", blog)
+
+    let image = blog.attributes.cover.data.attributes.url
     return (
 
         <div className="blockDetails">
 
-            <NavLink to="/blogs" > Back to blogs</NavLink>
+            <NavLink to="/blogs" > Back</NavLink>
 
-            <h2>{details.attributes.title}</h2>
+            <h2>{blog.attributes.title}</h2>
 
-            <div className="box" key={details.id}>
+            <div className="box" key={blog.id}>
                 <div className="latestCard">
                     <div className="card1">
                         <img className='imgdetails' src={`http://localhost:1337${image}`} alt="logo" />
                         <br />
                         <br />
-                        <NavLink to="/blogs/details" > {details.attributes.title}</NavLink>
+                        {/* <NavLink to="/blogs/details" > {details.attributes.title}</NavLink> */}
 
                         <br />
-                        {details.attributes.createdAt.slice(0, 10)}
+                        {blog.attributes.createdAt.slice(0, 10)}
                         <br />
                         <br />
-                        {details.attributes.content}
+                        {blog.attributes.content}
                     </div>
                 </div>
             </div>
