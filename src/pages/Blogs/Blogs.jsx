@@ -1,16 +1,14 @@
-import React, { useEffect, useState } from 'react'
-import { useGlobalContext } from '../../components/Context'
+import React, {useState, useEffect} from 'react'
+import FeaturedBlogs from '../../components/FeaturedBlogs'
 import qs from 'qs';
 import axios from 'axios';
-import LatestBlogs from '../../components/LatestBlogs'
-import FeaturedBlogs from '../../components/FeaturedBlogs'
 import { API } from '../../vars'
 
 
+const Blogs = () => {
 
-const HomePage = () => {
 
-    const [blogs, setBlogs] = useState([]);
+      const [blogs, setBlogs] = useState([]);
     const [meta, setMeta] = useState(undefined);
     const [isLoading, setIsLoading] = useState(false);
 
@@ -26,7 +24,7 @@ const HomePage = () => {
             populate: "*",
             pagination: {
                 page: 1,
-                pageSize: 2
+                pageSize: 10
             }
         })
         try {
@@ -41,7 +39,6 @@ const HomePage = () => {
     }
 
 
-
     if (isLoading) {
         return (
             <div className='main-page-container'>
@@ -52,25 +49,12 @@ const HomePage = () => {
 
 
 
-    return (
+    return  (
         <div className='main-page-container'>
-            <h1>Total Posts: {meta ? meta.pagination.total : 0}</h1>
-            <div className='content'>
-            <div className='homeContainerleft'>
-                <h3>FEATURED BLOGS</h3>
-
-                <FeaturedBlogs blogs={blogs}/>
-            </div>
-
-            <div className='homeContainerright'>
-                <h3>LATEST BLOGS</h3>
-                <LatestBlogs blogs={blogs} />
-            </div >
-            </div>
+            <h3>ALL BLOGS</h3>
+            <FeaturedBlogs blogs={blogs}/>
         </div>
-
     )
-
 }
 
-export default HomePage
+export default Blogs

@@ -5,9 +5,9 @@ import { Link, NavLink } from 'react-router-dom';
 
 
 
-const LatestBlogs = () => {
+const LatestBlogs = (props) => {
 
-    const { data, isLoading, detailPost } = useGlobalContext();
+    const { blogs } = props;
 
 
 
@@ -20,7 +20,7 @@ const LatestBlogs = () => {
 
 
             {
-                data.map((currPost) => {
+                blogs.map((currPost) => {
                     // console.log(currPost.attributes.title)
 
                     // console.log(currPost.id)

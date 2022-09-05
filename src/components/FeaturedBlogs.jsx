@@ -4,9 +4,9 @@ import { NavLink } from 'react-router-dom';
 
 
 
-const FeaturedBlogs = () => {
+const FeaturedBlogs = (props) => {
 
-    const { data, isLoading, detailPost } = useGlobalContext();
+    const { blogs  } = props;
 
 
     return (
@@ -15,7 +15,7 @@ const FeaturedBlogs = () => {
 
 
             {
-                data.map((currPost) => {
+                blogs.map((currPost) => {
                     const { attributes } = currPost
 
                     return (

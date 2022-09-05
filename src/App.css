@@ -1,3 +1,7 @@
+#root {
+  width: 100%;
+}
+
 ul {
   position: fixed;
   list-style-type: none;
@@ -93,30 +97,42 @@ img {
 }
 
 
+.main-page-container {
+  max-width: 1200px;
+  padding-top: 100px;
+  margin: 0 auto;
+}
+
+.content {
+  display: flex;
+}
+
 .blogsContainer {
   padding: 20px 50px;
-  position: absolute;
-  top: 50px;
+  /* position: absolute; */
+  /* top: 50px;
   left: 50px;
-  width: 80%;
+  width: 80%; */
   display: block;
 }
 
 
 .homeContainerleft {
-  position: absolute;
+  /* position: absolute;
   top: 50px;
   width: 25%;
-  left: 100px;
+  left: 100px; */
+  flex: 1;
   display: block;
-  padding: 20px 30px;
+  margin-right: 60px;
 }
 
 .homeContainerright {
-  position: absolute;
+  /* position: absolute;
   top: 70px;
   right: 100px;
-  width: 50%;
+  width: 50%; */
+  flex: 2
 
 }
 
